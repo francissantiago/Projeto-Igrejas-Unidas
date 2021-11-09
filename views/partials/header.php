@@ -32,6 +32,8 @@ require_once($path.'/config/variables.php');
     <link rel="stylesheet" href="<?php $path;?>/dist/css/mdb.rtl.min.css.map">
     <!-- SweetAlert2 CSS -->
     <link rel="stylesheet" href="sweetalert2.min.css">
+    <!-- Flags -->
+    <link rel="stylesheet" href="<?php $path;?>/assets/plugins/flag-icon-css/css/flag-icon.min.css">
 
     <!--
              ██  █████  ██    ██  █████  ███████  ██████ ██████  ██ ██████  ████████ 
