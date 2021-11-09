@@ -1,5 +1,9 @@
 <?php 
+if(!defined('RESTRICTED')){
+    define('RESTRICTED',1);
+}
 $path = $_SERVER['DOCUMENT_ROOT'];
+require_once($path.'/config/variables.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -10,6 +14,13 @@ $path = $_SERVER['DOCUMENT_ROOT'];
     <title>
         <?php echo $siteTitle; ?>
     </title>
+    <!--
+         ██████ ███████ ███████ 
+        ██      ██      ██      
+        ██      ███████ ███████ 
+        ██           ██      ██ 
+         ██████ ███████ ███████ 
+    -->
     <!-- MDBootstrap CSS -->
     <link rel="stylesheet" href="<?php $path;?>/dist/css/mdb.dark.min.css">
     <link rel="stylesheet" href="<?php $path;?>/dist/css/mdb.dark.min.css.map">
@@ -19,9 +30,22 @@ $path = $_SERVER['DOCUMENT_ROOT'];
     <link rel="stylesheet" href="<?php $path;?>/dist/css/mdb.min.css.map">
     <link rel="stylesheet" href="<?php $path;?>/dist/css/mdb.rtl.min.css">
     <link rel="stylesheet" href="<?php $path;?>/dist/css/mdb.rtl.min.css.map">
+    <!-- SweetAlert2 CSS -->
+    <link rel="stylesheet" href="sweetalert2.min.css">
+
+    <!--
+             ██  █████  ██    ██  █████  ███████  ██████ ██████  ██ ██████  ████████ 
+             ██ ██   ██ ██    ██ ██   ██ ██      ██      ██   ██ ██ ██   ██    ██    
+             ██ ███████ ██    ██ ███████ ███████ ██      ██████  ██ ██████     ██    
+        ██   ██ ██   ██  ██  ██  ██   ██      ██ ██      ██   ██ ██ ██         ██    
+         █████  ██   ██   ████   ██   ██ ███████  ██████ ██   ██ ██ ██         ██    
+    -->
     <!-- MDBootstrap JS -->
     <script src="<?php $path;?>/dist/js/mdb.min.js"></script>
     <script src="<?php $path;?>/dist/js/mdb.min.js.map"></script>
+    <!-- SweetAlert2 JS -->
+    <script src="sweetalert2.min.js"></script>
+
     
     <!-- Manifest PWA -->
     <link rel="manifest" href="<?php $path;?>/manifest.json" />

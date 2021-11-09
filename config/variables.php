@@ -5,7 +5,13 @@ if(!defined('RESTRICTED')){
         exit('No direct script access allowed! Path: '.dirname(__FILE__));
     }
 }
-
+/*
+███████ ██ ████████ ███████     ██ ███    ██ ███████  ██████  
+██      ██    ██    ██          ██ ████   ██ ██      ██    ██ 
+███████ ██    ██    █████       ██ ██ ██  ██ █████   ██    ██ 
+     ██ ██    ██    ██          ██ ██  ██ ██ ██      ██    ██ 
+███████ ██    ██    ███████     ██ ██   ████ ██       ██████  
+*/
 $siteTitle = "Projeto Igrejas Unidas";
 $adminMail = "helper@sperocoin.org";
 $site_url = 'http://127.0.0.18:81/';
