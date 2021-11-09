@@ -1,0 +1,21 @@
+{
+	"name": "IGREJAS UNIDAS",
+	"short_name": "IGREJAS UNIDAS",
+	"description": "Oh! quão bom e quão suave é que os irmãos vivam em união.",
+	"start_url": "/",
+	"scope" : "/",
+	"display": "standalone",
+	"background_color": "#9D3542",
+	"icons": [
+		{
+			"src": "/dist/img/pwa/icon-192.png",
+			"type": "image/png",
+			"sizes": "192x192"
+		},
+		{
+			"src": "/dist/img/pwa/icon-512.png",
+			"type": "image/png",
+			"sizes": "512x512"
+		}
+	]
+}
