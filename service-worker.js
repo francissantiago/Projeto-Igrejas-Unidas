@@ -1,6 +1,16 @@
 const CACHE_NAME = 'platform';
 const STATIC_ASSETS = [
-	'/'
+	'/',
+    '/dist/css/mdb.dark.min.css',
+    '/dist/css/mdb.dark.min.css.map',
+    '/dist/css/mdb.dark.rtl.min.css',
+    '/dist/css/mdb.dark.rtl.min.css.map',
+    '/dist/css/mdb.min.css',
+    '/dist/css/mdb.min.css.map',
+    '/dist/css/mdb.rtl.min.css',
+    '/dist/css/mdb.rtl.min.css.map',
+    '/dist/js/mdb.min.js',
+    '/dist/js/mdb.min.js.map'
 ];
 
 console.log(STATIC_ASSETS);
