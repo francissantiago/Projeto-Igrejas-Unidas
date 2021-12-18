@@ -17,5 +17,14 @@ $adminMail = "helper@sperocoin.org";
 $site_url = 'http://127.0.0.18:85/';
 $maintenance_mode = "false";
 
-
+/*
+██████  ███████  ██████  █████  ██████  ████████  ██████ ██   ██  █████  
+██   ██ ██      ██      ██   ██ ██   ██    ██    ██      ██   ██ ██   ██ 
+██████  █████   ██      ███████ ██████     ██    ██      ███████ ███████ 
+██   ██ ██      ██      ██   ██ ██         ██    ██      ██   ██ ██   ██ 
+██   ██ ███████  ██████ ██   ██ ██         ██     ██████ ██   ██ ██   ██ 
+ */
+$recaptcha = "false"; // CHANGE "true" FOR PRODUCTION
+$recaptchaSiteKey = "";
+$recaptchaSecretKey = "";
 ?>
