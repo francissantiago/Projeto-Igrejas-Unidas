@@ -23,6 +23,15 @@ $lang = [
     'alert_wrong_email_or_password' => 'E-mail ou senha incorretos!',
     'alert_login_success' => 'SEJA BEM VINDO!',
 
+    /* MENU */
+    'menu_user_church' => 'CONGREGAÇÃO',
+    'menu_user_about_me' => 'PERFIL',
+    'menu_user_status' => 'SITUAÇÃO',
+    'menu_user_church_notifications' => 'NOTIFICAÇÕES',
+    'menu_about_soft' => 'SOBRE O APP',
+    'menu_user_privacy_policy' => 'POLÍTICA DE PRIVACIDADE',
+    'menu_logout' => 'DESCONECTAR',
+
 
 ];
 ?>

@@ -2,6 +2,7 @@
 if(session_status() == PHP_SESSION_NONE){
     session_start();
 }
+$_SESSION['email'] = "";
 
 $path = $_SERVER['DOCUMENT_ROOT'];
 include_once($path.'/views/partials/header.php');

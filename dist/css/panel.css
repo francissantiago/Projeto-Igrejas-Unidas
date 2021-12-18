@@ -1,0 +1,30 @@
+.bg-cards{
+	color: white;
+	background: #008080;
+	border: solid 1px #00FFFF;
+	border-radius: 5px;
+	min-height: 50vh;
+}
+
+.bg-cards #title{
+	border-bottom: 1px solid #00FFFF;
+	background-color: #004d4d;
+	font-weight: bold;
+}
+
+.card-body i{
+	color: yellow;
+	font-weight: bold;
+	font-size: 5vh;
+}
+
+.hr-centered{
+	background-color: #00FFFF;
+	width: 60%;
+	margin: auto;
+}
+
+hr{
+	background-color: #00FFFF;
+}
+

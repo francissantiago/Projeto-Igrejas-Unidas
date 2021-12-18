@@ -32,6 +32,9 @@ require_once($path.'/config/variables.php');
     <link rel="stylesheet" href="<?php $path;?>/dist/css/mdb.rtl.min.css.map">
     <!-- Flags -->
     <link rel="stylesheet" href="<?php $path;?>/dist/plugins/flag-icon-css/css/flag-icon.min.css">
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
 
     <!--
              ██  █████  ██    ██  █████  ███████  ██████ ██████  ██ ██████  ████████ 

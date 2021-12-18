@@ -1,37 +1,61 @@
 <?php
+/*
+* ==================================================
+* Session Controller and File Restriction Web Access
+* ==================================================
+*/
 if(!defined('RESTRICTED')){
     if(session_status() != PHP_SESSION_NONE){
-        $emailSession = $_SESSION['email'];
-        header("location: dashboard");
+        header("location: panel");
         exit('No direct script access allowed! Path: '.dirname(__FILE__));
     }
 }
 
 /*
-    ██   ██ ███████  █████  ██████  ███████ ██████  ███████ 
-    ██   ██ ██      ██   ██ ██   ██ ██      ██   ██ ██      
-    ███████ █████   ███████ ██   ██ █████   ██████  ███████ 
-    ██   ██ ██      ██   ██ ██   ██ ██      ██   ██      ██ 
-    ██   ██ ███████ ██   ██ ██████  ███████ ██   ██ ███████ 
+* ==================================================
+* Headers
+* ==================================================
 */
+require_once($path.'/scripts/includes/functionsHeaders.php');
 
-$path = $_SERVER['DOCUMENT_ROOT'];
+/*
+* ==================================================
+* Sessions
+* ==================================================
+*/
+$emailSession = $_SESSION['email'];
 
-header('Content-Type: text/html; charset=utf-8');
-
-$datetime = new DateTime();
-$timezone = new DateTimeZone('America/New_York');
-$datetime->setTimezone($timezone);
-
-error_reporting(E_ERROR | E_PARSE | E_ALL);
-
+/*
+* ==================================================
+* Variables, Configs, Authenticator and QRCode Library
+* ==================================================
+*/
 require_once ($path.'/config/variables.php');
 require_once ($path.'/config/db.php');
 
+/*
+* ==================================================
+* Validation Database Connection
+* ==================================================
+*/
 if(connectDB() === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }
-
 mysqli_set_charset(connectDB(),"utf8");
+
+/*
+* ===========================================================================================================================
+*     FUNCTIONS
+* ===========================================================================================================================
+* Users
+* ==================================================
+*/
+
+require_once($path.'/scripts/includes/user/functionsUsers.php');
+
+
+/* LOGIN LEVEL */
+
+
 
 ?>
