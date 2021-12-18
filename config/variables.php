@@ -17,4 +17,5 @@ $adminMail = "helper@sperocoin.org";
 $site_url = 'http://127.0.0.18:81/';
 $maintenance_mode = "false";
 
+
 ?>
