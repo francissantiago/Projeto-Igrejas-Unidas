@@ -33,7 +33,7 @@ require_once($path.'/config/variables.php');
     <!-- SweetAlert2 CSS -->
     <link rel="stylesheet" href="sweetalert2.min.css">
     <!-- Flags -->
-    <link rel="stylesheet" href="<?php $path;?>/assets/plugins/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="<?php $path;?>/dist/plugins/flag-icon-css/css/flag-icon.min.css">
 
     <!--
              ██  █████  ██    ██  █████  ███████  ██████ ██████  ██ ██████  ████████ 
