@@ -30,8 +30,6 @@ require_once($path.'/config/variables.php');
     <link rel="stylesheet" href="<?php $path;?>/dist/css/mdb.min.css.map">
     <link rel="stylesheet" href="<?php $path;?>/dist/css/mdb.rtl.min.css">
     <link rel="stylesheet" href="<?php $path;?>/dist/css/mdb.rtl.min.css.map">
-    <!-- SweetAlert2 CSS -->
-    <link rel="stylesheet" href="sweetalert2.min.css">
     <!-- Flags -->
     <link rel="stylesheet" href="<?php $path;?>/dist/plugins/flag-icon-css/css/flag-icon.min.css">
 
@@ -46,7 +44,7 @@ require_once($path.'/config/variables.php');
     <script src="<?php $path;?>/dist/js/mdb.min.js"></script>
     <script src="<?php $path;?>/dist/js/mdb.min.js.map"></script>
     <!-- SweetAlert2 JS -->
-    <script src="sweetalert2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.5/dist/sweetalert2.all.min.js"></script>
 
     
     <!-- Manifest PWA -->

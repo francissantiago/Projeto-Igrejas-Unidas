@@ -20,7 +20,8 @@ $lang = [
     'login_forgot_password' => 'Esqueceu sua senha?',
     'login_button' => 'ENTRAR',
 
-
+    'alert_wrong_email_or_password' => 'E-mail ou senha incorretos!',
+    'alert_login_success' => 'SEJA BEM VINDO!',
 
 
 ];

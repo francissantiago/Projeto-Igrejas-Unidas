@@ -8,6 +8,8 @@ include_once($path.'/views/partials/header.php');
 require_once($path.'/config/variables.php');
 require_once($path.'/scripts/functions.php');
 
+require_once($path.'/locale/' . $_SESSION['lang'] . '.php');
+
 if($maintenance_mode == "false"){
     if (isset($_SESSION['email'])) {
         echo "<script>
@@ -34,8 +36,6 @@ if($maintenance_mode == "false"){
           $_SESSION['lang'] = $_SESSION['lang'];
         }
     }
-
-    require_once($path.'/locale/' . $_SESSION['lang'] . '.php');
 
 /* LOGIN FORMS*/
 // initializing variables
@@ -79,24 +79,28 @@ if($recaptcha == "true"){
   }
   $resposta = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".$recaptchaSecretKey."&response=".$captcha_data."&remoteip=".$_SERVER['REMOTE_ADDR']);
     if (count($errors) == 0 && $resposta.success) {
-      $password = password_hash($password, PASSWORD_DEFAULT);
-      $query = mysqli_query($connectDB(), "SELECT * FROM users WHERE loginEmail='$email' AND loginPassword='$password'");
-      if (mysqli_num_rows($query) == 1) {
-        $_SESSION['email'] = $email;
-        header('location: panel');
-      }else{
-        array_push($errors, $lang['alert_wrong_email_or_password']);
+      $queryLogin = mysqli_query(connectDB(), "SELECT * FROM users WHERE loginEmail='$email'");
+      while ($rowLogin = mysqli_fetch_assoc($queryLogin)) {
+          $rowPassword = $rowLogin['loginPassword'];
+          if (password_verify($password, $rowPassword)) {
+            $_SESSION['email'] = $email;
+            header('location: panel');
+          }else{
+            array_push($errors, $lang['alert_wrong_email_or_password']);
+          }
       }
     }
   } else {
       if (count($errors) == 0) {
-      $password = password_hash($password, PASSWORD_DEFAULT);
-      $query = mysqli_query($connectDB(), "SELECT * FROM users WHERE loginEmail='$email' AND loginPassword='$password'");
-      if (mysqli_num_rows($query) == 1) {
-        $_SESSION['email'] = $email;
-        header('location: panel');
-      }else{
-        array_push($errors, $lang['alert_wrong_email_or_password']);
+      $queryLogin = mysqli_query(connectDB(), "SELECT * FROM users WHERE loginEmail='$email'");
+      while ($rowLogin = mysqli_fetch_assoc($queryLogin)) {
+          $rowPassword = $rowLogin['loginPassword'];
+          if (password_verify($password, $rowPassword)) {
+            $_SESSION['email'] = $email;
+            header('location: panel');
+          }else{
+            array_push($errors, $lang['alert_wrong_email_or_password']);
+          }
       }
     }
   }
