@@ -19,10 +19,17 @@ if($maintenance_mode == "false"){
           showConfirmButton: false,
           timer: 3000
         }).then(function() {
-          window.location.href = 'login?lang=".$_SESSION['lang']."';
+          window.location.href = 'panel?lang=".$_SESSION['lang']."';
         });
       </script>";
     }
+
+    if ($_SESSION['email'] != ""){
+        echo "<script>
+        window.location.href = 'panel?lang=".$_SESSION['lang']."';
+        </script>";
+    }
+
     if (!isset($_SESSION['lang']) || !isset($_GET["lang"])) {
         $_SESSION['lang'] = "pt-br";
     } else if (isset($_GET['lang']) && $_SESSION['lang'] != $_GET['lang'] && !empty($_GET['lang'])) {
