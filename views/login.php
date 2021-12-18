@@ -135,7 +135,7 @@ if($recaptcha == "true"){
                 </form>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3"></div>
     </div>
 </div>
 
