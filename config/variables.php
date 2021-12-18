@@ -14,7 +14,7 @@ if(!defined('RESTRICTED')){
 */
 $siteTitle = "Projeto Igrejas Unidas";
 $adminMail = "helper@sperocoin.org";
-$site_url = 'http://127.0.0.18:81/';
+$site_url = 'http://127.0.0.18:85/';
 $maintenance_mode = "false";
 
 
