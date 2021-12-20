@@ -23,14 +23,30 @@ $lang = [
     'alert_wrong_email_or_password' => 'E-mail ou senha incorretos!',
     'alert_login_success' => 'SEJA BEM VINDO!',
 
-    /* MENU */
-    'menu_user_church' => 'CONGREGAÇÃO',
-    'menu_user_about_me' => 'PERFIL',
-    'menu_user_status' => 'SITUAÇÃO',
-    'menu_user_church_notifications' => 'NOTIFICAÇÕES',
+    /* USER MENU */
+    'menu_user_about_me' => 'MEU PERFIL',
+    'menu_user_church' => 'MINHA CONGREGAÇÃO',
+    'menu_user_status' => 'MINHA SITUAÇÃO',
+    'menu_user_church_notifications' => 'NOTIFICAÇÕES DA CONGREGAÇÃO',
+    'menu_user_app_notifications' => 'NOTIFICAÇÕES DA CONGREGAÇÃO',
+
+    /* CHURCH ADMIN MENU */
+    'menu_church_admin_about_me' => 'MEU PERFIL',
+    'menu_church_admin_church' => 'ADMINISTRAR CONGREGAÇÃO',
+    'menu_church_admin_members' => 'ADMINISTRAR MEMBROS',
+    'menu_church_admin_church_notifications' => 'ADMININSTRAR NOTIFICAÇÕES',
+
+    /* APP ADMIN MENU */
+    'menu_app_churchs' => 'ADMINISTRAR CONGREGAÇÕES',
+    'menu_app_members' => 'ADMININSTRAR MEMBROS',
+    'menu_app_notifications' => 'ADMININSTRAR NOTIFICAÇÕES',
+
+    /* GENERAL MENU */
     'menu_about_soft' => 'SOBRE O APP',
     'menu_user_privacy_policy' => 'POLÍTICA DE PRIVACIDADE',
     'menu_logout' => 'DESCONECTAR',
+    'menu_app_notifications' => 'NOTIFICAÇÕES DO DESENVOLVEDOR',
+
 
 
 ];

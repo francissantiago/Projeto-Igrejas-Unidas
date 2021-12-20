@@ -6,34 +6,72 @@ $path = $_SERVER['DOCUMENT_ROOT'];
 require_once($path.'/scripts/functions.php');
 ?>
 <link rel="stylesheet" type="text/css" href="<?php $path?>/dist/css/menu.css">
+<div class="menu">
+  <nav class="menu__nav">
+    <ul class="menu__list r-list">
 <?php
 foreach(selectUsers() as $userRows) {
     $userLevel = $userRows['loginLevel'];
     if($userLevel == 0){
 ?>
-<div class="menu">
-  <nav class="menu__nav">
-    <ul class="menu__list r-list">
       <li class="menu__group">
-        <a href="#0" class="menu__link r-link"><i class='bx bxs-user-detail'></i> <?php echo $lang['menu_user_about_me']?></a>
+        <a href="#0" class="menu__link r-link"><i class="fa-solid fa-user"></i> <?php echo $lang['menu_user_about_me']?></a>
       </li>
       <li class="menu__group">
-        <a href="#0" class="menu__link r-link"><i class='bx bxs-church'></i> <?php echo $lang['menu_user_church']?></a>
+        <a href="#0" class="menu__link r-link"><i class="fa-solid fa-place-of-worship"></i> <?php echo $lang['menu_user_church']?></a>
       </li>
       <li class="menu__group">
-        <a href="#0" class="menu__link r-link"><i class='bx bxs-label' ></i> <?php echo $lang['menu_user_status']?></a>
+        <a href="#0" class="menu__link r-link"><i class="fa-solid fa-hands-holding"></i> <?php echo $lang['menu_user_status']?></a>
       </li>
       <li class="menu__group">
-        <a href="#0" class="menu__link r-link"><i class='bx bxs-bell-ring'></i> <?php echo $lang['menu_user_church_notifications']?></a>
+        <a href="#0" class="menu__link r-link"><i class="fa-solid fa-comment"></i> <?php echo $lang['menu_user_church_notifications']?></a>
       </li>
       <li class="menu__group">
-        <a href="#0" class="menu__link r-link"><i class='bx bxs-info-circle' ></i> <?php echo $lang['menu_about_soft']?></a>
+        <a href="#0" class="menu__link r-link"><i class="fa-solid fa-comment"></i> <?php echo $lang['menu_app_notifications']?></a>
+      </li>
+<?php
+    } elseif($userLevel == 1){
+?>
+      <li class="menu__group">
+        <a href="#0" class="menu__link r-link"><i class="fa-solid fa-user"></i> <?php echo $lang['menu_church_admin_about_me']?></a>
       </li>
       <li class="menu__group">
-        <a href="#0" class="menu__link r-link"><i class='bx bx-detail'></i> <?php echo $lang['menu_user_privacy_policy']?></a>
+        <a href="#0" class="menu__link r-link"><i class="fa-solid fa-place-of-worship"></i> <?php echo $lang['menu_church_admin_church']?></a>
       </li>
-      <li class="menu__group" style="padding-top: 10%;">
-        <a href="#0" class="menu__link r-link"><i class='bx bxs-exit' ></i> <?php echo $lang['menu_logout']?></a>
+      <li class="menu__group">
+        <a href="#0" class="menu__link r-link"><i class="fa-solid fa-users"></i> <?php echo $lang['menu_church_admin_members']?></a>
+      </li>
+      <li class="menu__group">
+        <a href="#0" class="menu__link r-link"><i class="fa-solid fa-comment-medical"></i> <?php echo $lang['menu_church_admin_church_notifications']?></a>
+      </li>
+      <li class="menu__group">
+        <a href="#0" class="menu__link r-link"><i class="fa-solid fa-comment"></i> <?php echo $lang['menu_app_notifications']?></a>
+      </li>
+<?php
+    } elseif($userLevel == 2){
+?>
+      <li class="menu__group">
+        <a href="#0" class="menu__link r-link"><i class="fa-solid fa-place-of-worship"></i> <?php echo $lang['menu_app_churchs']?></a>
+      </li>
+      <li class="menu__group">
+        <a href="#0" class="menu__link r-link"><i class="fa-solid fa-users"></i> <?php echo $lang['menu_app_members']?></a>
+      </li>
+      <li class="menu__group">
+        <a href="#0" class="menu__link r-link"><i class="fa-solid fa-comment-medical"></i> <?php echo $lang['menu_app_notifications']?></a>
+      </li>
+<?php
+    }
+}
+ ?>
+  <hr>
+       <li class="menu__group">
+        <a href="#0" class="menu__link r-link"><i class="fa-solid fa-mobile-screen-button"></i> <?php echo $lang['menu_about_soft']?></a>
+       </li>
+       <li class="menu__group">
+        <a href="#0" class="menu__link r-link"><i class="fa-solid fa-file-contract"></i> <?php echo $lang['menu_user_privacy_policy']?></a>
+      </li>
+      <li class="menu__group" style="bottom: 8%; position: fixed;">
+        <a href="#0" class="menu__link r-link"><i class="fa-solid fa-right-from-bracket"></i> <?php echo $lang['menu_logout']?></a>
       </li>
     </ul>
   </nav>
@@ -45,22 +83,6 @@ foreach(selectUsers() as $userRows) {
     </span>
   </button>
 </div>
-
-<?php
-    } elseif($userLevel == 1){
-        echo "Level 1";
-?>
-
-<?php
-    } elseif($userLevel == 2){
-        echo "Level 2";
-?>
-
-
-<?php
-    }
-}
- ?>
 
 
 <script type="text/javascript">

@@ -178,6 +178,7 @@ MENU STYLES
 
 .menu__list{
   width: 100%;
+  height: 95%;
   max-height: 100%;
 
   overflow-y: auto;
@@ -342,7 +343,7 @@ body{
   --rLinkTextColor: var(--colorWhite);
 
   padding: .5rem 2rem; 
-  font-size: 2rem;
+  font-size: 1.2rem;
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -371,6 +372,15 @@ body{
 }
 
 i{
-  font-size: 1.35em;
+  font-size: 2.6em;
   padding-top: 2%;
+  padding-right: 6%;
+}
+hr{
+  border: 4px solid white;
+  border-radius: 5px 0 5px 0;
+  width: 90%;
+  margin: auto;
+  margin-top: 2%;
+  margin-bottom: 2%;
 }
