@@ -2,7 +2,7 @@
 $path = $_SERVER['DOCUMENT_ROOT'];
 session_start();
   if (!isset($_SESSION['email'])) {
-    $_SESSION['msg'] = "You must log in first";
+    //$_SESSION['msg'] = "You must log in first";
     header('location: login');
   }
   if (isset($_POST['logout'])) {
@@ -13,6 +13,7 @@ session_start();
 require_once('routes.php');
 
     function login(){
+        $path = $_SERVER['DOCUMENT_ROOT'];
         include_once($path.'/views/login.php');
     }
 
@@ -20,8 +21,8 @@ require_once('routes.php');
         include_once('register.php');
     }
 
-    function dashboard(){
-        include_once('dashboard.php');
+    function panel(){
+        include_once('panel.php');
     }
 
     function page404(){
@@ -38,8 +39,8 @@ require_once('routes.php');
         login();
     }else if($request == 'register'){
         register();
-    }else if($request == 'dashboard'){
-        dashboard();
+    }else if($request == 'panel'){
+        panel();
     }else
         page404();
 ?>

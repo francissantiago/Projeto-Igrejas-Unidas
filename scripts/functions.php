@@ -23,7 +23,9 @@ require_once($path.'/scripts/includes/functionsHeaders.php');
 * Sessions
 * ==================================================
 */
-$emailSession = $_SESSION['email'];
+if($_SESSION['email'] != ""){
+    $emailSession = $_SESSION['email'];
+}
 
 /*
 * ==================================================

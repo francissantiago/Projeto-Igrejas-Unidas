@@ -8,6 +8,7 @@ RewriteCond %{SCRIPT_FILENAME} !-f
 RewriteRule ^index$ index.php [NC]
 RewriteRule ^login$ views/login.php [NC]
 RewriteRule ^panel$ views/panel.php [NC]
-
+RewriteRule ^church_manager$ views/admin/church_manager.php [NC]
+RewriteRule ^add_church$ views/admin/add_church.php [NC]
 
 </IfModule>

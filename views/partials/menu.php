@@ -51,7 +51,7 @@ foreach(selectUsers() as $userRows) {
     } elseif($userLevel == 2){
 ?>
       <li class="menu__group">
-        <a href="#0" class="menu__link r-link"><i class="fa-solid fa-place-of-worship"></i> <?php echo $lang['menu_app_churchs']?></a>
+        <a href="church_manager" class="menu__link r-link"><i class="fa-solid fa-place-of-worship"></i> <?php echo $lang['menu_app_churchs']?></a>
       </li>
       <li class="menu__group">
         <a href="#0" class="menu__link r-link"><i class="fa-solid fa-users"></i> <?php echo $lang['menu_app_members']?></a>
@@ -71,7 +71,10 @@ foreach(selectUsers() as $userRows) {
         <a href="#0" class="menu__link r-link"><i class="fa-solid fa-file-contract"></i> <?php echo $lang['menu_user_privacy_policy']?></a>
       </li>
       <li class="menu__group" style="bottom: 8%; position: fixed;">
-        <a href="#0" class="menu__link r-link"><i class="fa-solid fa-right-from-bracket"></i> <?php echo $lang['menu_logout']?></a>
+        <form action="panel" method="post" id="logout">
+          <input type="hidden" name="logout" value="logout" />
+            <a class="menu__link r-link" href="javascript:void(0)" onClick="document.getElementById('logout').submit();" name="logout"><i class="fa-solid fa-right-from-bracket"></i> <?php echo $lang['menu_logout']?></a>
+        </form>
       </li>
     </ul>
   </nav>

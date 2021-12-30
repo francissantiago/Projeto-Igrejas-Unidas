@@ -11,6 +11,15 @@ $lang = [
     'error' => 'Erro!',
     'info' => 'Informação',
     'alert_login_success' => 'Bem Vindo(a)!',
+    'alert_wrong_email' => 'Preencha o e-mail corretamente!',
+    'alert_wrong_email_or_password' => 'E-mail ou senha incorretos!',
+    'alert_email_required' => 'Insira seu e-mail!',
+    'alert_password_required' => 'Insira sua senha!',
+    'alert_wrong_captcha' => 'Resolução incorreta de Captcha!',
+    'alert_wrong_email_or_password' => 'E-mail ou senha incorretos!',
+    'alert_login_required' => 'Por favor realize login!',
+    'alert_logout' => 'Logout realizado com sucesso!',
+
 
     /* LOGIN PAGE */
     'login_title' => 'ENTRAR',
@@ -19,10 +28,7 @@ $lang = [
     'login_password_input' => 'Senha',
     'login_forgot_password' => 'Esqueceu sua senha?',
     'login_button' => 'ENTRAR',
-
-    'alert_wrong_email_or_password' => 'E-mail ou senha incorretos!',
-    'alert_login_success' => 'SEJA BEM VINDO!',
-
+    
     /* USER MENU */
     'menu_user_about_me' => 'MEU PERFIL',
     'menu_user_church' => 'MINHA CONGREGAÇÃO',
@@ -34,18 +40,21 @@ $lang = [
     'menu_church_admin_about_me' => 'MEU PERFIL',
     'menu_church_admin_church' => 'ADMINISTRAR CONGREGAÇÃO',
     'menu_church_admin_members' => 'ADMINISTRAR MEMBROS',
-    'menu_church_admin_church_notifications' => 'ADMININSTRAR NOTIFICAÇÕES',
+    'menu_church_admin_church_notifications' => 'ADMINISTRAR NOTIFICAÇÕES',
 
     /* APP ADMIN MENU */
     'menu_app_churchs' => 'ADMINISTRAR CONGREGAÇÕES',
-    'menu_app_members' => 'ADMININSTRAR MEMBROS',
-    'menu_app_notifications' => 'ADMININSTRAR NOTIFICAÇÕES',
+    'menu_app_members' => 'ADMINISTRAR MEMBROS',
+    'menu_app_notifications' => 'ADMINISTRAR NOTIFICAÇÕES',
 
     /* GENERAL MENU */
     'menu_about_soft' => 'SOBRE O APP',
     'menu_user_privacy_policy' => 'POLÍTICA DE PRIVACIDADE',
     'menu_logout' => 'DESCONECTAR',
     'menu_app_notifications' => 'NOTIFICAÇÕES DO DESENVOLVEDOR',
+
+    /* ADD CHURCH */
+    'add_church' => 'ADICIONAR CONGREGAÇÃO',
 
 
 

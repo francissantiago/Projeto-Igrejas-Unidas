@@ -3,48 +3,28 @@ if(session_status() == PHP_SESSION_NONE){
     session_start();
 }
 $_SESSION['email'] = "";
-
 $path = $_SERVER['DOCUMENT_ROOT'];
-include_once($path.'/views/partials/header.php');
-require_once($path.'/config/variables.php');
-require_once($path.'/scripts/functions.php');
+include($path.'/views/partials/header.php');
+require($path.'/config/variables.php');
+require($path.'/scripts/functions.php');
 
-require_once($path.'/locale/' . $_SESSION['lang'] . '.php');
+if (!isset($_SESSION['lang']) || !isset($_GET["lang"])) {
+    $_SESSION['lang'] = "pt-br";
+} else if (isset($_GET['lang']) && $_SESSION['lang'] != $_GET['lang'] && !empty($_GET['lang'])) {
+    if ($_GET['lang'] == "pt-br") {
+      $_SESSION['lang'] = "pt-br";
+    } 
+    else if ($_GET['lang'] == "en") {
+      $_SESSION['lang'] = "en";
+    }
+    else if ($_GET['lang'] != "en" || $_GET['lang'] != "pt-br" ) {
+      $_SESSION['lang'] = $_SESSION['lang'];
+    }
+}
+
+require($path.'/locale/' . $_SESSION['lang'] . '.php');
 
 if($maintenance_mode == "false"){
-    if (isset($_SESSION['email'])) {
-        echo "<script>
-        Swal.fire({
-          text: ".$lang['alert_login_success'].",
-          icon: 'success',
-          showConfirmButton: false,
-          timer: 3000
-        }).then(function() {
-          window.location.href = 'panel?lang=".$_SESSION['lang']."';
-        });
-      </script>";
-    }
-
-    if ($_SESSION['email'] != ""){
-        echo "<script>
-        window.location.href = 'panel?lang=".$_SESSION['lang']."';
-        </script>";
-    }
-
-    if (!isset($_SESSION['lang']) || !isset($_GET["lang"])) {
-        $_SESSION['lang'] = "pt-br";
-    } else if (isset($_GET['lang']) && $_SESSION['lang'] != $_GET['lang'] && !empty($_GET['lang'])) {
-        if ($_GET['lang'] == "pt-br") {
-          $_SESSION['lang'] = "pt-br";
-        } 
-        else if ($_GET['lang'] == "en") {
-          $_SESSION['lang'] = "en";
-        }
-        else if ($_GET['lang'] != "en" || $_GET['lang'] != "pt-br" ) {
-          $_SESSION['lang'] = $_SESSION['lang'];
-        }
-    }
-
 /* LOGIN FORMS*/
 // initializing variables
 $username = "";
@@ -58,15 +38,41 @@ if (isset($_POST['login'])) {
   $password = mysqli_real_escape_string(connectDB(), $_POST['password']);
 
   if (empty($email)) {
-    array_push($errors, $lang['alert_email_required']);
+    echo "<script>
+          Swal.fire({
+            text: '".$lang['alert_email_required']."',
+            icon: 'error',
+            showConfirmButton: false,
+            timer: 3000
+          }).then(function() {
+            window.location.href = 'login?lang=".$_SESSION['lang']."';
+          });
+        </script>";
   }
   if (!preg_match('/^[a-z0-9_\+-]+(\.[a-z0-9_\+-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*\.([a-z]{2,4})$/i', $email)){
-    array_push($errors, $lang['alert_wrong_email']);
+    echo "<script>
+          Swal.fire({
+            text: '".$lang['alert_wrong_email']."',
+            icon: 'error',
+            showConfirmButton: false,
+            timer: 3000
+          }).then(function() {
+            window.location.href = 'login?lang=".$_SESSION['lang']."';
+          });
+        </script>";
   }
   if (empty($password)) {
-    array_push($errors, $lang['alert_password_required']);
+    echo "<script>
+          Swal.fire({
+            text: '".$lang['alert_password_required']."',
+            icon: 'error',
+            showConfirmButton: false,
+            timer: 3000
+          }).then(function() {
+            window.location.href = 'login?lang=".$_SESSION['lang']."';
+          });
+        </script>";
   }
-
 
 if($recaptcha == "true"){
   if (isset($_POST['g-recaptcha-response'])) {
@@ -75,7 +81,7 @@ if($recaptcha == "true"){
   if (!$captcha_data) {
     echo "<script>
           Swal.fire({
-            text: ".$lang['alert_wrong_captcha'].",
+            text: '".$lang['alert_wrong_captcha']."',
             icon: 'error',
             showConfirmButton: false,
             timer: 3000
@@ -92,22 +98,58 @@ if($recaptcha == "true"){
           $rowPassword = $rowLogin['loginPassword'];
           if (password_verify($password, $rowPassword)) {
             $_SESSION['email'] = $email;
-            header('location: panel');
+            echo "<script>
+              Swal.fire({
+                text: '".$lang['alert_login_success']."',
+                icon: 'success',
+                showConfirmButton: false,
+                timer: 3000
+              }).then(function() {
+                window.location.href = 'panel?lang=".$_SESSION['lang']."';
+              });
+            </script>";
           }else{
-            array_push($errors, $lang['alert_wrong_email_or_password']);
+            echo "<script>
+              Swal.fire({
+                text: '".$lang['alert_wrong_email_or_password']."',
+                icon: 'error',
+                showConfirmButton: false,
+                timer: 3000
+              }).then(function() {
+                window.location.href = 'login?lang=".$_SESSION['lang']."';
+              });
+            </script>";
           }
       }
     }
   } else {
       if (count($errors) == 0) {
-      $queryLogin = mysqli_query(connectDB(), "SELECT * FROM users WHERE loginEmail='$email'");
+      $queryLogin = mysqli_query(connectDB(), "SELECT loginEmail,loginPassword FROM users WHERE loginEmail='$email'");
       while ($rowLogin = mysqli_fetch_assoc($queryLogin)) {
           $rowPassword = $rowLogin['loginPassword'];
           if (password_verify($password, $rowPassword)) {
             $_SESSION['email'] = $email;
-            header('location: panel');
+            echo "<script>
+              Swal.fire({
+                text: '".$lang['alert_login_success']."',
+                icon: 'success',
+                showConfirmButton: false,
+                timer: 3000
+              }).then(function() {
+                window.location.href = 'panel?lang=".$_SESSION['lang']."';
+              });
+            </script>";
           }else{
-            array_push($errors, $lang['alert_wrong_email_or_password']);
+            echo "<script>
+              Swal.fire({
+                text: '".$lang['alert_wrong_email_or_password']."',
+                icon: 'error',
+                showConfirmButton: false,
+                timer: 3000
+              }).then(function() {
+                window.location.href = 'login?lang=".$_SESSION['lang']."';
+              });
+            </script>";
           }
       }
     }
@@ -129,9 +171,6 @@ if($recaptcha == "true"){
                   </p>
                     <h1><?php echo $lang['login_title']; ?></h1>
                     <p class="text-muted"> <?php echo $lang['login_subtitle']; ?></p>
-                    <?php foreach ($errors as $error) : ?>
-                      <div class="alert alert-danger" role="alert"><p><?php echo $error ?></p></div>
-                    <?php endforeach ?>
                     <input type="text" name="email" placeholder="<?php echo $lang['login_email_input']; ?>" required="required">
                     <input type="password" name="password" placeholder="<?php echo $lang['login_password_input']; ?>" required="required">
                     <?php if($recaptcha == "true"){
